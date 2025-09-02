@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Week 2, exe 1</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<body>
+    <h1>Opiskelijat ovat</h1>
+
+    <!--laita alle thymeleafin looppirakenteella listaus opiskelijoista-->
+    <ul>
+        <li th:each="student : ${students}"> <!--Tämä on tärkeä osata-->
+            <span th:text="${student.firstName}">First name</span>
+            <span th:text="${student.lastName}">Last name</span>
+        </li>
+    </ul>
+</body>
+
+</html>

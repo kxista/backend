@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Friend List Page</title>
+    <meta charset="UTF-8">
+    <style>
+        form span {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Listaus -->
+    <h1>My friends</h1>
+    <h3>Name</h3>
+    <ul>
+        <li th:each="friend : ${friends}">
+            <span th:text="${friend.firstName}"></span>
+            <span th:text="${friend.lastName}"></span>
+        </li>
+    </ul>
+
+    <!-- Lomake uuden kaverin lisäämiseen -->
+    <h1>Add new friend to list</h1>
+    <form th:action="@{/savePage}" method="post">
+        <span>First name: <input type="text" name="firstName" /></span>
+        <span>Last name: <input type="text" name="lastName" /></span>
+        <span><button type="submit">Add friend</button></span>
+    </form>
+
+</body>
+</html>
